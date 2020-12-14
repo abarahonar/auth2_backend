@@ -1,18 +1,19 @@
 const express = require('express');
+const cors = require('cors');
 const router = express.Router();
+const options = require('../cors');
 
-router.get('/', (req, res) => {
+router.get('/', cors(), (req, res) => {
     res.send('Hello from HTTPS');
 });
 
-router.get('/set', (req, res) => {
+router.get('/set', cors(options), (req, res) => {
     res.writeHead(200, {
         'Set-Cookie': 'name=key_value; secure;domain=testing.com'
     }).send();
 });
 
-
-router.get('/get', (req, res) => {
+router.get('/get', cors(options), (req, res) => {
     if (!req.cookies.name) {
         return res.status(401).send();
     }
