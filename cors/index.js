@@ -12,7 +12,7 @@ if (process.env.PRODUCTION) {
     }
 } else {
     options = {
-        origin: ['https://1.front.testing.com:1024', 'https://2.front.testing.com:1025'],
+        origin: ['https://1.front.testing.com:1024', 'https://2.front.testing.com:1025', 'https://auth.testing.com:1024'],
         credentials: true
     }
 }
