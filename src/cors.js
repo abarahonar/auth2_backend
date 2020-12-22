@@ -2,7 +2,7 @@ let options;
 if (process.env.PRODUCTION) {
     options = {
         origin: (origin, callback) => {
-            if (origin.endsWith('testing.com:1024')) {
+            if (origin.endsWith('testing.com')) {
                 callback(null, true);
             } else {
                 callback(new Error('Not allowed by CORS'));
