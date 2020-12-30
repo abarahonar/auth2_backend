@@ -14,7 +14,7 @@ if (process.env.PRODUCTION) {
     }
 } else {
     options = {
-        origin: [`https://1.front.${ domain }:1024`, `https://2.front.${ domain }:1024`, `https://auth.${ domain }:1024`],
+        origin: [`https://1.front.${ domain }:1025`, `https://2.front.${ domain }:1025`, `https://auth.${ domain }:1025`],
         credentials: true
     }
 }

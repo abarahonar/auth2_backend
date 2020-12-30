@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase-admin": "^9.4.2",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "ldapjs": "^2.2.2"
   }
 }

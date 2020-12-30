@@ -15,7 +15,8 @@ router.post('/login', corsSettings, (req, res) => {
     auth2.login(req, res);
 });
 
-router.get('/authorize', corsSettings, (req, res) => {
+router.options('/authorize', corsSettings);
+router.post('/authorize', corsSettings, (req, res) => {
     auth2.authorize(req, res);
 });
 
