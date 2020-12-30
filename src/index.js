@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const https = require('https');
 const admin = require('firebase-admin');
+const client = require('./ldap');
 
 admin.initializeApp({
     credential: admin.credential.cert(require('./assets/key.json')),
