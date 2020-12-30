@@ -9,7 +9,7 @@ function searchUser(sAMAccountName) {
             dn: 'CN=Administrator,CN=Users,DC=samba,DC=lan',
             pass: 'Pingeso1*'
         };
-
+//
         // Opciones de búsqueda.
         const opts = {
             filter: `(sAMAccountName=${sAMAccountName})`,
