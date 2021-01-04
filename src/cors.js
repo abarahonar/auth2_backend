@@ -1,7 +1,8 @@
 let options;
 const domain = process.env.DOMAIN || 'testing.com';
+const production = process.env.PRODUCTION || 'no';
 
-if (process.env.PRODUCTION) {
+if (production == 'yes') {
     options = {
         origin: (origin, callback) => {
             if (origin.endsWith(domain)) {
