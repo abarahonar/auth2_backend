@@ -1,10 +1,12 @@
 const ldapjs = require('ldapjs');
 
+const url = process.env.URL || 'ldaps://10.0.2.15';
+
 class LdapClient {
     constructor() {
         // Cliente LDAP, necesario para conectarse al directorio.
         return ldapjs.createClient({
-            url: 'ldaps://10.0.2.15',
+            url,
             tlsOptions: {
                 rejectUnauthorized: false
             }
