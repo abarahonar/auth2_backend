@@ -1,6 +1,7 @@
-const client = require('.');
+const ldapjs = require('ldapjs');
 
 const pass = process.env.PASS || 'Pingeso1*';
+const url = process.env.URL || 'ldaps://35.192.174.192';
 
 const searchUser = (sAMAccountName) => {
     return new Promise((resolve, reject) => {
@@ -17,6 +18,13 @@ const searchUser = (sAMAccountName) => {
             scope: 'sub',
             attributes: ['cn', 'memberOf']
         };
+
+        const client = ldapjs.createClient({
+            url,
+            tlsOptions: {
+                rejectUnauthorized: false
+            }
+        });
 
         // Conexión con LDAP y búsqueda del usuario.
         client.bind(credentials.dn, credentials.pass, (err) => {
@@ -35,6 +43,7 @@ const searchUser = (sAMAccountName) => {
                     }
                 });
                 res.on('end', (result) => {
+                    client.unbind();
                     resolve(results);
                 });
             });
