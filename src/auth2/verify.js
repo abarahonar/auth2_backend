@@ -8,7 +8,7 @@ const verify = (req, res) => {
     admin.auth().verifySessionCookie(token, true).then((decodedClaims) => {
         res.status(200).json(decodedClaims);
     }).catch((error) => {
-        res.status(400).send();
+        res.status(401).send();
     })
 }
 
