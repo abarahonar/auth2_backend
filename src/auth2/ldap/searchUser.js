@@ -3,6 +3,12 @@ const ldapjs = require('ldapjs');
 const pass = process.env.PASS || 'Pingeso1*';
 const url = process.env.URL || 'ldaps://35.192.174.192';
 
+/**
+ * Descripcion
+ * @param {string} sAMAccountName que es esto
+ * @author Roberto Lillo
+ * @exports searchUser
+ */
 const searchUser = (sAMAccountName) => {
     return new Promise((resolve, reject) => {
         // Credenciales para el Bind.

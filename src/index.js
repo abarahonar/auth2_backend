@@ -1,3 +1,18 @@
+/**
+ * @file Archivo encargado de levantar el servidor https y conectarse
+ * con Firebase
+ * 
+ * Se requiere de 3 archivos para que funcionen: ./assets/key.json obtenido a
+ * partir de la consola de Firebase, ./src/assets/server.key y
+ * ./src/assets/server.cert que corresponden a la llave y el certificado ssl
+ * respectivamente
+ * 
+ * El objeto con el que se inicializa la variable admin debe ser editado
+ * para que funcione con la instancia de Firebase propia
+ * 
+ * @author Alan Barahona
+ */
+
 const express = require('express');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');

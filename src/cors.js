@@ -1,3 +1,13 @@
+/**
+ * @file Encargado de verificación de CORS.
+ * 
+ * En caso de estar en modo producción, se verifica que la dirección de origen
+ * sea un subdominio de domain, En caso de no estar en modo produccion, se
+ * verifica que la dirección de orige sea un subdominio de domain y que se
+ * esté ejecutándose en los puertos indicados
+ * @author Alan Barahona
+ */
+
 let options;
 const domain = process.env.DOMAIN || 'testing.com';
 const production = process.env.PRODUCTION || 'no';

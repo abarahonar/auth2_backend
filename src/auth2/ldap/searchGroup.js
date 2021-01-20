@@ -1,6 +1,11 @@
 const searchUser = require('./searchUser');
 
-// Obtención de grupos a partir de la respuesta de LDAP.
+/**
+ * Descripcion. Funcion asincrona
+ * @param {string} email que es esto
+ * @author Roberto Lillo
+ * @exports searchGroup
+ */
 const searchGroup = async (email) => {
     const groups = [];
     const result = await searchUser(email);
