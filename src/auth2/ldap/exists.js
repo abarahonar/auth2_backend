@@ -7,8 +7,13 @@ const searchGroup = require('./searchGroup');
  * @exports exists
  */
 const exists = async (email) => {
-    const result = await searchGroup(email);
-    return result.length > 0;
+    try {
+        const result = await searchGroup(email);
+        return result.length > 0;
+    }
+    catch (err) {
+        throw err;
+    }
 }
 
 module.exports = exists;

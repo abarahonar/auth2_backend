@@ -35,7 +35,8 @@ const searchUser = (sAMAccountName) => {
         // Conexión con LDAP y búsqueda del usuario.
         client.bind(credentials.dn, credentials.pass, (err) => {
             if (err) {
-                return err;
+                reject(err);
+                return;
             }
             const results = [];
             client.search(credentials.dc, opts, (err, res) => {

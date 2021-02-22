@@ -19,8 +19,8 @@ router.post('/login', corsSettings, (req, res) => {
 });
 
 //Ruta de autorizacion
-router.options('/authorize', corsSettings);
-router.post('/authorize', corsSettings, (req, res) => {
+router.options('/authorize', cors());
+router.post('/authorize', cors(), (req, res) => {
     auth2.authorize(req, res);
 });
 

@@ -30,6 +30,8 @@ const login = (req, res) => {
                 } else {
                     res.status(401).send();
                 }
+            }).catch((error) => {
+                res.status(500).send(error);
             });
         }).catch((error) => {
             res.status(401).send(error);
