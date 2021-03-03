@@ -21,3 +21,6 @@ The ldap server is expected to be reachable at `URL` with password `PASS`.
 ```sh
 docker run --rm --name auth2_back -d -p 443:443 -e "PORT=443" -e "DOMAIN=catteam.tk" -e "PRODUCTION=yes" -e "URL=ldaps://35.192.174.192" -e "PASS=Pingeso1*" auth2_backend
 ```
+
+## Documentation
+[Link](https://docs.google.com/document/d/1lF-Oo39UGKvF1jVQyOZyYOtqFlvhjIsCm-c1tqYTX4U/edit?usp=sharing)
